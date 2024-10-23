@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/roots.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    
+    <div class="grid-box vh-100 color-dark-blue">
+        <header>
+            <div class="d-flex justify-content-between py-4 color-light-blue upper-nav w-100 ps-3">
+                <div class=" d-flex align-items-center justify-content-center ">
+
+                    <input type="checkbox" id="menuicn" hidden class="icn cursor menuicn">
+                    <label for="menuicn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <div class="logo ps-3">
+                        <img src="./assets/image/svg/logo-svg.svg" alt="logo-icon">
+                    </div>
+
+                </div>
+
+                <div class="searchbar d-flex align-items-center justify-content-center w-100">
+                    <input type="text" placeholder="Search for Assets" class="fw-normal fs-sm lh-150 poppin-font">
+                    <div class="searchbtn">
+                        <svg class=" srchicn" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.146 15.3707 4.888 14.112C3.63 12.8533 3.00067 11.316 3 9.5C3 7.68333 3.62933 6.146 4.888 4.888C6.14667 3.63 7.684 3.00067 9.5 3C11.3167 3 12.854 3.62933 14.112 4.888C15.37 6.14667 15.9993 7.684 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8127 13.5623 12.688 12.687C13.5633 11.8117 14.0007 10.7493 14 9.5C14 8.25 13.5623 7.18733 12.687 6.312C11.8117 5.43667 10.7493 4.99933 9.5 5C8.25 5 7.18733 5.43767 6.312 6.313C5.43667 7.18833 4.99933 8.25067 5 9.5C5 10.75 5.43767 11.8127 6.313 12.688C7.18833 13.5633 8.25067 14.0007 9.5 14Z"
+                                fill="#62C9CC"
+                                style="fill:#62C9CC;fill:color(display-p3 0.3843 0.7882 0.8000);fill-opacity:1;" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="message d-flex align-items-center justify-content-center pe-5">
+                    <svg class="me-3 cursor svg-bell" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.5098 1C12.2231 0.999962 11.9398 1.06155 11.679 1.18059C11.4182 1.29963 11.1861 1.47333 10.9983 1.68994C10.8105 1.90654 10.6715 2.16098 10.5907 2.43601C10.5098 2.71104 10.4891 3.00024 10.5298 3.284C9.08039 3.71193 7.80833 4.59722 6.90356 5.80767C5.99878 7.01812 5.50985 8.48877 5.50977 10V18H4.50977C4.24455 18 3.9902 18.1054 3.80266 18.2929C3.61512 18.4804 3.50977 18.7348 3.50977 19C3.50977 19.2652 3.61512 19.5196 3.80266 19.7071C3.9902 19.8946 4.24455 20 4.50977 20H20.5098C20.775 20 21.0293 19.8946 21.2169 19.7071C21.4044 19.5196 21.5098 19.2652 21.5098 19C21.5098 18.7348 21.4044 18.4804 21.2169 18.2929C21.0293 18.1054 20.775 18 20.5098 18H19.5098V10C19.5097 8.48877 19.0207 7.01812 18.116 5.80767C17.2112 4.59722 15.9391 3.71193 14.4898 3.284C14.5305 3.00024 14.5097 2.71104 14.4289 2.43601C14.348 2.16098 14.209 1.90654 14.0212 1.68994C13.8335 1.47333 13.6013 1.29963 13.3405 1.18059C13.0798 1.06155 12.7964 0.999962 12.5098 1ZM14.5098 22C14.5098 22.2652 14.4044 22.5196 14.2169 22.7071C14.0293 22.8946 13.775 23 13.5098 23H11.5098C11.2445 23 10.9902 22.8946 10.8027 22.7071C10.6151 22.5196 10.5098 22.2652 10.5098 22C10.5098 21.7348 10.6151 21.4804 10.8027 21.2929C10.9902 21.1054 11.2445 21 11.5098 21H13.5098C13.775 21 14.0293 21.1054 14.2169 21.2929C14.4044 21.4804 14.5098 21.7348 14.5098 22Z"
+                            fill="white" style="fill:white;fill-opacity:1;" />
+                        <circle cx="18.7207" cy="5.20703" r="3.28906" fill="#62C9CC" stroke="#12123A"
+                            style="fill:#62C9CC;fill:color(display-p3 0.3843 0.7882 0.8000);fill-opacity:1;stroke:#12123A;stroke:color(display-p3 0.0706 0.0706 0.2275);stroke-opacity:1;" />
+                    </svg>
+                    <div class="dp d-flex align-items-center ">
+                        <img src="./assets/image/svg/dp-svg-img.svg" alt="logo-dp" class="dp-img">
+                        <h3 class="text-white ms-2  me-4 roboto-font lh-114 fw-normal fs-6 mb-0 text-nowrap jhon-doe">
+                            Jhon Doe
+                        </h3>
+                        <!-- <img src="./assets/image/svg/down-arrow-svg.svg" alt="down-arrow" class="cursor drop-down-arrow "> -->
+                        <div class="dropdown">
+                            <button class="btn btn-secondary bg-transparent border-0" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="./assets/image/svg/arrow-svg.svg" alt="down-arrow"
+                                    class="cursor drop-down-arrow ">
+                            </button>
+                            <ul class="dropdown-menu color-bg-blue">
+                                <li><a class="dropdown-item text-white" href="#"><svg class="me-3 cursor svg-bell-1"
+                                            width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.5098 1C12.2231 0.999962 11.9398 1.06155 11.679 1.18059C11.4182 1.29963 11.1861 1.47333 10.9983 1.68994C10.8105 1.90654 10.6715 2.16098 10.5907 2.43601C10.5098 2.71104 10.4891 3.00024 10.5298 3.284C9.08039 3.71193 7.80833 4.59722 6.90356 5.80767C5.99878 7.01812 5.50985 8.48877 5.50977 10V18H4.50977C4.24455 18 3.9902 18.1054 3.80266 18.2929C3.61512 18.4804 3.50977 18.7348 3.50977 19C3.50977 19.2652 3.61512 19.5196 3.80266 19.7071C3.9902 19.8946 4.24455 20 4.50977 20H20.5098C20.775 20 21.0293 19.8946 21.2169 19.7071C21.4044 19.5196 21.5098 19.2652 21.5098 19C21.5098 18.7348 21.4044 18.4804 21.2169 18.2929C21.0293 18.1054 20.775 18 20.5098 18H19.5098V10C19.5097 8.48877 19.0207 7.01812 18.116 5.80767C17.2112 4.59722 15.9391 3.71193 14.4898 3.284C14.5305 3.00024 14.5097 2.71104 14.4289 2.43601C14.348 2.16098 14.209 1.90654 14.0212 1.68994C13.8335 1.47333 13.6013 1.29963 13.3405 1.18059C13.0798 1.06155 12.7964 0.999962 12.5098 1ZM14.5098 22C14.5098 22.2652 14.4044 22.5196 14.2169 22.7071C14.0293 22.8946 13.775 23 13.5098 23H11.5098C11.2445 23 10.9902 22.8946 10.8027 22.7071C10.6151 22.5196 10.5098 22.2652 10.5098 22C10.5098 21.7348 10.6151 21.4804 10.8027 21.2929C10.9902 21.1054 11.2445 21 11.5098 21H13.5098C13.775 21 14.0293 21.1054 14.2169 21.2929C14.4044 21.4804 14.5098 21.7348 14.5098 22Z"
+                                                fill="white" style="fill:white;fill-opacity:1;" />
+                                            <circle cx="18.7207" cy="5.20703" r="3.28906" fill="#62C9CC"
+                                                stroke="#12123A"
+                                                style="fill:#62C9CC;fill:color(display-p3 0.3843 0.7882 0.8000);fill-opacity:1;stroke:#12123A;stroke:color(display-p3 0.0706 0.0706 0.2275);stroke-opacity:1;" />
+                                        </svg></a></li>
+                                <li><a class="dropdown-item text-white d-flex align-items-center" href="#"><img
+                                            src="./assets/image/svg/dp-svg-img.svg" alt="logo-dp" class="dp-img-2">
+                                        <h3
+                                            class="text-white ms-2  me-4 roboto-font lh-114 fw-normal fs-6 mb-0 text-nowrap jhon-doe-1">
+                                            Jhon Doe
+                                        </h3>
+                                    </a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <aside>
+            <div class="side-nav h-xl-100">
+                <ul class="d-flex flex-column justify-content-between h-lg-less-75 h-xl-100 m-3 ps-0">
+                    <li class="text-decoration-none">
+                        <ul class="gap-10 d-flex flex-column">
+                            <li class="d-flex gap-12 option-1 nav-link py-3 ps-3 align-items-center"> <img
+                                    src="./assets/image/svg/side-nav-svg-1.svg" alt="svg-icon"><a
+                                    class="text-white mb-0 fs-sm fw-normal lh-114 roboto-font text-decoration-none"
+                                    href="#">Timeline</a></li>
+                            <li class="d-flex gap-12 nav-link py-3 ps-3 align-items-center"> <img
+                                    src="./assets/image/svg/side-nav-svg-2.svg" alt="svg-icon"><a
+                                    class="color-light-white-2 mb-0 fs-sm fw-normal lh-114 roboto-font text-decoration-none"
+                                    href="#">Graphics</a></li>
+                            <li class="d-flex gap-12 nav-link py-3 ps-3 align-items-center"> <img
+                                    src="./assets/image/svg/side-nav-svg-3.svg" alt="svg-icon"><a
+                                    class="color-light-white-2 mb-0 fs-sm fw-normal lh-114 roboto-font text-decoration-none"
+                                    href="#">Portfolio</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="text-decoration-none">
+                        <ul>
+                            <li class="d-flex gap-12 nav-link py-3 ps-3 align-items-center"> <img
+                                    src="./assets/image/svg/side-nav-svg-4.svg" alt="svg-icon"><a
+                                    class="color-light-white-2 mb-0 fs-sm fw-normal lh-114 roboto-font text-decoration-none"
+                                    href="#">Help</a></li>
+                            <li class="d-flex gap-12 nav-link py-3 ps-3 align-items-center"> <img
+                                    src="./assets/image/svg/side-nav-svg-5.svg" alt="svg-icon"><a
+                                    class="color-light-white-2 mb-0 fs-sm fw-normal lh-114 roboto-font text-decoration-none"
+                                    href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="color-dark-blue text-white py-3">
+            <div class="d-flex align-items-center w-100 ps-3 pe-3 flex-column-reverse flex-sm-row">
+                <h1 class="text-white fw-medium lh-114 fs-md mb-0 mt-3 roboto-font text-nowrap ">Ferrominera
+                    Orinoco
+                </h1>
+                <div class="ms-3 text-iron-producer">
+                    <p class=" mb-0 color-light-grey-text fw-normal lh-150 text-center poppin-font fs-sm text-nowrap">
+                        Iron producer</p>
+                </div>
+                <div class="d-flex w-100 justify-content-end ">
+                    <button class="back-btn roboto-font fw-medium text-center lh-114">Back</button>
+                </div>
+            </div>
+
+            <div class="grid-main-box ps-3 pe-3">
+                <div class="box-1 mt-3 grid-item-1">
+                    <h2 class="color-light-grey-text roboto-font fw-medium  lh-114 fs-md min-w170">Working Capital Loan
+                    </h2>
+                    <p class="mb-0 color-light-white-2 lh-150 fw-normal poppin-font fs-sm">Type of instrument
+                    </p>
+                </div>
+                <div class="box-1 mt-3 grid-item-2 item-2">
+                    <h2 class="color-light-grey-text roboto-font fw-medium  lh-114 fs-md ">16.00%
+                    </h2>
+                    <p class="mb-0 color-light-white-2 lh-150 fw-normal poppin-font fs-sm text-nowrap">Interest rate
+                    </p>
+                </div>
+                <div class="box-1 mt-3 grid-item-3">
+                    <h2 class="color-light-grey-text roboto-font fw-medium  lh-114 fs-md text-nowrap">$
+                        5,565,099.00
+                    </h2>
+                    <p class="mb-0 color-light-white-2 lh-150 fw-normal poppin-font fs-sm">Total amount
+                    </p>
+                </div>
+                <div class="box-4 mt-3 grid-item-4 frame">
+
+                    <div class="d-flex mb-2">
+                        <div class="que-svg-1 d-flex align-items-center justify-content-center">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 17H9V15H11V17ZM13.07 9.25L12.17 10.17C11.45 10.9 11 11.5 11 13H9V12.5C9 11.4 9.45 10.4 10.17 9.67L11.41 8.41C11.78 8.05 12 7.55 12 7C12 5.9 11.1 5 10 5C8.9 5 8 5.9 8 7H6C6 4.79 7.79 3 10 3C12.21 3 14 4.79 14 7C14 7.88 13.64 8.68 13.07 9.25Z"
+                                    fill="white" style="fill:white;fill-opacity:1;" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="fw-normal fs-6  lh-114 text-start text-white roboto-font ms-3 mb-0">Enter
+                                Amount to Invest</h4>
+                            <p class="poppin-font fw-normal fs-6 lh-150 color-white-2 text-start ms-3">Invest
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between usd-box mb-3">
+                        <p class=" color-light-white-2 mb-0 fs-sm fw-normal lh-150 poppin-font">USD</p>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.25 5.847C8.314 6.103 7.75 6.822 7.75 7.5C7.75 8.178 8.314 8.897 9.25 9.152V5.847ZM10.75 10.848V14.152C11.686 13.897 12.25 13.178 12.25 12.5C12.25 11.822 11.686 11.103 10.75 10.848Z"
+                                fill="#62C9CC"
+                                style="fill:#62C9CC;fill:color(display-p3 0.3843 0.7882 0.8000);fill-opacity:1;" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20 10C20 15.523 15.523 20 10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10ZM10 3.25C10.1989 3.25 10.3897 3.32902 10.5303 3.46967C10.671 3.61032 10.75 3.80109 10.75 4V4.317C12.38 4.609 13.75 5.834 13.75 7.5C13.75 7.69891 13.671 7.88968 13.5303 8.03033C13.3897 8.17098 13.1989 8.25 13 8.25C12.8011 8.25 12.6103 8.17098 12.4697 8.03033C12.329 7.88968 12.25 7.69891 12.25 7.5C12.25 6.822 11.686 6.103 10.75 5.847V9.317C12.38 9.609 13.75 10.834 13.75 12.5C13.75 14.166 12.38 15.391 10.75 15.683V16C10.75 16.1989 10.671 16.3897 10.5303 16.5303C10.3897 16.671 10.1989 16.75 10 16.75C9.80109 16.75 9.61032 16.671 9.46967 16.5303C9.32902 16.3897 9.25 16.1989 9.25 16V15.683C7.62 15.391 6.25 14.166 6.25 12.5C6.25 12.3011 6.32902 12.1103 6.46967 11.9697C6.61032 11.829 6.80109 11.75 7 11.75C7.19891 11.75 7.38968 11.829 7.53033 11.9697C7.67098 12.1103 7.75 12.3011 7.75 12.5C7.75 13.178 8.314 13.897 9.25 14.152V10.683C7.62 10.391 6.25 9.166 6.25 7.5C6.25 5.834 7.62 4.609 9.25 4.317V4C9.25 3.80109 9.32902 3.61032 9.46967 3.46967C9.61032 3.32902 9.80109 3.25 10 3.25Z"
+                                fill="#62C9CC"
+                                style="fill:#62C9CC;fill:color(display-p3 0.3843 0.7882 0.8000);fill-opacity:1;" />
+                        </svg>
+                    </div>
+                    <div class="d-flex justify-content-between net-border mb-3">
+                        <p class="mb-0 text-white fw-normal fs-sm lh-114 roboto-font">Net Income</p>
+                        <p class="fw-bolder text-white fs-sm lh-114 text-start roboto-font mb-0">$00.00</p>
+                    </div>
+                    <div class="d-flex justify-content-between net-border mb-3">
+                        <p class="mb-0 text-white fw-normal fs-sm lh-114 roboto-font text-nowrap">Maximum
+                            investment per
+                            user</p>
+                        <p class="fw-bolder text-white fs-sm lh-114 text-start roboto-font mb-0 text-nowrap">$
+                            5565099.00
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-between net-border mb-3">
+                        <p class="mb-0 text-white fw-normal fs-sm lh-114 roboto-font">Your investment in the
+                            product</p>
+                        <p class="fw-bolder text-white fs-sm lh-114 text-start roboto-font mb-0">$00.00</p>
+                    </div>
+                    <button class="invest-btn text-white text-center fw-medium lh-114 fs-6 roboto-font">Invest
+                        now</button>
+                </div>
+                <div class="box-5 mt-3 grid-item-5">
+                    <div class="d-flex justify-content-between mb-20">
+                        <p class="text-white fw-medium lh-114 roboto-font fs-5 mb-0">Timeline</p>
+                        <p class="roboto-font fs-6 fw-normal lh-114 text-start color-light-grey-text mb-0">How
+                            does
+                            it works?</p>
+                    </div>
+                    <div class="d-flex justify-content-between ">
+                        <p class="poppin-font fw-normal fs-sm lh-150 color-white-2 mb-0">01/08/2023</p>
+                        <p class="poppin-font fw-normal fs-sm lh-150 color-white-2 mb-0">30/08/2023</p>
+                    </div>
+                    <progress class="progress-line" id="file" value="40" max="100"> </progress>
+                    <div class="d-flex justify-content-between ">
+                        <p class="roboto-font fw-normal fs-6 lh-114 text-white mb-0">$10.00</p>
+                        <p class="roboto-font fw-normal fs-6 lh-114 text-white mb-0">$5,565,500</p>
+                    </div>
+                    <div class="d-flex justify-content-between mt-1">
+                        <p class="roboto-font fw-normal fs-sm lh-114 color-light-white-2 mb-0">Initial public
+                            offering</p>
+                        <p class="roboto-font fw-normal fs-sm lh-114 color-light-white-2 mb-0">Credit
+                            performance (DDC)</p>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 df">
+                            <div class="d-flex align-items-center ">
+                                <div class="que-svg d-flex align-items-center justify-content-center me-3">
+                                    <svg width="18" height="21" viewBox="0 0 18 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.00001 0C6.81276 0.00258035 4.71584 0.872603 3.16923 2.41922C1.62261 3.96584 0.752589 6.06276 0.750009 8.25C0.747389 10.0374 1.33124 11.7763 2.41201 13.2C2.41201 13.2 2.63701 13.4962 2.67376 13.539L9.00001 21L15.3293 13.5353C15.3623 13.4955 15.588 13.2 15.588 13.2L15.5888 13.1978C16.669 11.7747 17.2526 10.0366 17.25 8.25C17.2474 6.06276 16.3774 3.96584 14.8308 2.41922C13.2842 0.872603 11.1873 0.00258035 9.00001 0ZM9.75001 12H8.25001V10.5H9.75001V12ZM9.75001 9H8.25001V7.5H9.75001V9ZM12.75 12H11.25V6H6.75001V12H5.25001V6C5.25041 5.6023 5.40857 5.221 5.68979 4.93978C5.97101 4.65856 6.35231 4.5004 6.75001 4.5H11.25C11.6477 4.5004 12.029 4.65856 12.3102 4.93978C12.5914 5.221 12.7496 5.6023 12.75 6V12Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-white mb-0 roboto-font fw-normal fs-sm text-start lh-114 text-nowrap">
+                                        Working Capital Loan</p>
+                                    <p class="color-light-white-2 poppin-font lh-150 fw-normal fs-sm mb-0">Type
+                                        of instrument</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 mt-5 mt-sm-0 df">
+                            <div class="d-flex align-items-center ">
+                                <div class="que-svg d-flex align-items-center justify-content-center me-3">
+                                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.7789 0.635387C5.21203 1.49482 0.951949 6.07848 0.533781 11.7039C0.0633432 17.772 4.55864 23.3193 10.7527 24.361C14.2288 24.934 18.0184 23.7099 20.7365 21.1577C23.2716 18.7877 24.5 15.9229 24.5 12.4852C24.5 5.21904 17.94 -0.45844 10.7789 0.635387ZM16.79 2.92722C21.2069 5.0107 23.7421 9.59435 22.9319 14.1259C22.6182 15.949 21.4944 18.4491 20.6058 19.2305C20.1092 19.6732 19.9786 19.6992 19.4036 19.3867C18.0968 18.6835 17.7048 17.6158 17.7048 14.777V12.1987L18.6195 11.8601C19.6911 11.4955 20.5797 10.4538 20.5797 9.59435C20.5797 8.96931 20.5274 8.96931 18.0968 8.96931H15.6139V15.2458L9.47211 15.0895L9.3153 8.96931H6.85856C4.11434 8.96931 4.0098 9.04744 4.76773 10.5319C5.15976 11.3132 6.36199 12.0945 7.11992 12.0945C7.43354 12.0945 7.51195 12.5112 7.51195 14.5947C7.51195 17.3814 7.14605 18.345 5.68247 19.3867L4.92454 19.9336L4.0882 18.8138C2.49394 16.6261 2.18032 15.6364 2.18032 12.4852C2.15418 9.85479 2.20645 9.49018 2.88597 8.13592C4.29729 5.27113 7.11992 2.92722 10.021 2.198C11.9027 1.72921 14.9083 2.06778 16.79 2.92722ZM11.4323 18.2148C11.4323 19.1002 11.4061 19.1263 10.3607 19.1263H9.3153L9.3937 20.0899L9.47211 21.0795H15.4833L15.5617 20.0899L15.6401 19.1263H14.5947C13.5492 19.1263 13.5231 19.1002 13.5231 18.2148V17.3032H14.7776C16.006 17.3032 16.0844 17.3293 16.5287 18.345C16.79 18.944 17.4173 19.7774 17.9139 20.1941C18.7502 20.9493 18.7763 21.0014 18.332 21.34C17.365 22.0952 14.9083 22.8505 13.1049 22.9547C10.988 23.1109 8.84486 22.6161 7.22446 21.5744L6.20518 20.9493L7.25059 20.0118C7.82557 19.4909 8.42669 18.6835 8.60964 18.1887C8.89713 17.3553 8.97554 17.3032 10.1778 17.3032H11.4323V18.2148Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                        <path
+                                            d="M9.94211 4.12515C8.6092 4.56789 7.30242 5.3492 6.49223 6.20864L5.86497 6.88577H6.91039C7.56378 6.88577 8.53079 6.59929 9.34099 6.18259C11.275 5.19294 13.6272 5.1669 15.6396 6.15655C16.9987 6.83368 19.0111 7.1462 19.0111 6.67742C19.0111 6.33885 17.1816 5.03668 15.9271 4.48976C14.3851 3.81263 11.458 3.63033 9.94211 4.12515Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-white mb-0 roboto-font fw-normal fs-sm text-start lh-114 text-nowrap">
+                                        Pantera Exchange</p>
+                                    <p class="color-light-white-2 poppin-font lh-150 fw-normal fs-sm mb-0">
+                                        Transmitter</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 mt-sm-5 mt-md-0 mt-lg-5 mt-xl-0 pe-lg-5 pe-xl-0 mt-5 df">
+                            <div class="d-flex align-items-center ">
+                                <div class="que-svg d-flex align-items-center justify-content-center me-3">
+                                    <svg width="22" height="20" viewBox="0 0 22 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.33291 7.5406L2.33291 6.95393V9.16727H19.6662V6.97393L20.6529 7.5406C20.8053 7.6203 20.9825 7.63805 21.1477 7.59014C21.3128 7.54224 21.4531 7.43237 21.5391 7.28351C21.6252 7.13464 21.6504 6.95828 21.6095 6.79127C21.5685 6.62426 21.4647 6.47951 21.3196 6.38727L10.9996 0.447266L0.666244 6.38727C0.586574 6.42894 0.516158 6.4863 0.459231 6.5559C0.402305 6.6255 0.360044 6.70589 0.334993 6.79224C0.309941 6.87859 0.302616 6.96912 0.313458 7.05838C0.3243 7.14763 0.353085 7.23377 0.398081 7.31162C0.443078 7.38946 0.503355 7.4574 0.575288 7.51134C0.647221 7.56529 0.729322 7.60412 0.816653 7.62551C0.903984 7.6469 0.99474 7.65041 1.08346 7.63582C1.17218 7.62122 1.25703 7.58884 1.33291 7.5406ZM10.8996 3.2406C10.9807 3.19379 11.0726 3.16915 11.1662 3.16915C11.2599 3.16915 11.3518 3.19379 11.4329 3.2406L15.9129 5.83393H13.7662L11.1662 4.3406L8.56624 5.83393H6.42624L10.8996 3.2406Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                        <path
+                                            d="M20.8996 16.5006H20.3329V15.9339C20.3329 15.7306 20.2521 15.5356 20.1084 15.3918C19.9646 15.248 19.7696 15.1673 19.5662 15.1673H17.6662V10.2539H14.9996V15.1673H12.3329V10.2539H9.66624V15.1673H6.99958V10.2539H4.33291V15.1673H2.43291C2.22958 15.1673 2.03457 15.248 1.8908 15.3918C1.74702 15.5356 1.66624 15.7306 1.66624 15.9339V16.5006H1.09958C0.896245 16.5006 0.70124 16.5814 0.557462 16.7252C0.413684 16.8689 0.332911 17.0639 0.332911 17.2673V19.1673H21.6662V17.2673C21.6662 17.0639 21.5855 16.8689 21.4417 16.7252C21.2979 16.5814 21.1029 16.5006 20.8996 16.5006Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white mb-0 roboto-font fw-normal fs-sm text-start lh-114">
+                                        Compass Bank</p>
+                                    <p class="color-light-white-2 poppin-font lh-150 fw-normal fs-sm mb-0">
+                                        Settlor entity</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 mt-5 pe-xl-5 df">
+                            <div class="d-flex align-items-center ">
+                                <div class="que-svg d-flex align-items-center justify-content-center me-3">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.25 6.347C8.314 6.603 7.75 7.322 7.75 8C7.75 8.678 8.314 9.397 9.25 9.652V6.347ZM10.75 11.348V14.652C11.686 14.397 12.25 13.678 12.25 13C12.25 12.322 11.686 11.603 10.75 11.348Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M20 10.5C20 16.023 15.523 20.5 10 20.5C4.477 20.5 0 16.023 0 10.5C0 4.977 4.477 0.5 10 0.5C15.523 0.5 20 4.977 20 10.5ZM10 3.75C10.1989 3.75 10.3897 3.82902 10.5303 3.96967C10.671 4.11032 10.75 4.30109 10.75 4.5V4.817C12.38 5.109 13.75 6.334 13.75 8C13.75 8.19891 13.671 8.38968 13.5303 8.53033C13.3897 8.67098 13.1989 8.75 13 8.75C12.8011 8.75 12.6103 8.67098 12.4697 8.53033C12.329 8.38968 12.25 8.19891 12.25 8C12.25 7.322 11.686 6.603 10.75 6.347V9.817C12.38 10.109 13.75 11.334 13.75 13C13.75 14.666 12.38 15.891 10.75 16.183V16.5C10.75 16.6989 10.671 16.8897 10.5303 17.0303C10.3897 17.171 10.1989 17.25 10 17.25C9.80109 17.25 9.61032 17.171 9.46967 17.0303C9.32902 16.8897 9.25 16.6989 9.25 16.5V16.183C7.62 15.891 6.25 14.666 6.25 13C6.25 12.8011 6.32902 12.6103 6.46967 12.4697C6.61032 12.329 6.80109 12.25 7 12.25C7.19891 12.25 7.38968 12.329 7.53033 12.4697C7.67098 12.6103 7.75 12.8011 7.75 13C7.75 13.678 8.314 14.397 9.25 14.652V11.183C7.62 10.891 6.25 9.666 6.25 8C6.25 6.334 7.62 5.109 9.25 4.817V4.5C9.25 4.30109 9.32902 4.11032 9.46967 3.96967C9.61032 3.82902 9.80109 3.75 10 3.75Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white mb-0 roboto-font fw-normal fs-sm text-start lh-114">
+                                        $ 5565099.00</p>
+                                    <p class="color-light-white-2 poppin-font lh-150 fw-normal fs-sm mb-0 text-nowrap">
+                                        Total amount</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-5 col-lg-12 col-xl-5 mt-5 ps-3  df">
+                            <div class="d-flex align-items-center ">
+                                <div class="que-svg d-flex align-items-center justify-content-center me-3">
+                                    <svg width="22" height="17" viewBox="0 0 22 17" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M3.93108 0.785156C3.0786 0.785156 2.26103 1.1238 1.65824 1.7266C1.05544 2.32939 0.716797 3.14696 0.716797 3.99944V4.6423H21.2848V3.99944C21.2848 3.14696 20.9462 2.32939 20.3434 1.7266C19.7406 1.1238 18.923 0.785156 18.0705 0.785156H3.93108ZM0.716797 12.9994V5.92801H21.2848V12.9994C21.2848 13.8519 20.9462 14.6695 20.3434 15.2723C19.7406 15.8751 18.923 16.2137 18.0705 16.2137H3.93194C3.07946 16.2137 2.26189 15.8751 1.6591 15.2723C1.0563 14.6695 0.717654 13.8519 0.717654 12.9994H0.716797ZM14.6419 10.6423C14.4714 10.6423 14.3079 10.71 14.1874 10.8306C14.0668 10.9511 13.9991 11.1147 13.9991 11.2852C13.9991 11.4557 14.0668 11.6192 14.1874 11.7397C14.3079 11.8603 14.4714 11.928 14.6419 11.928H17.6419C17.8124 11.928 17.976 11.8603 18.0965 11.7397C18.2171 11.6192 18.2848 11.4557 18.2848 11.2852C18.2848 11.1147 18.2171 10.9511 18.0965 10.8306C17.976 10.71 17.8124 10.6423 17.6419 10.6423H14.6419Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white mb-0 roboto-font fw-normal fs-sm text-start lh-114">
+                                        2 months</p>
+                                    <p class="color-light-white-2 poppin-font lh-150 fw-normal fs-sm mb-0 text-nowrap">
+                                        Estimated repayment date</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-5 mt-3 grid-item-6">
+                    <h2 class="fw-medium lh-114 fs-5 roboto-font text-white text-start mb-3">About company</h2>
+                    <p class="fw-normal fs-sm lh-114 roboto-font text-white text-start">Dictum sit lobortis
+                        hendrerit morbi leo amet sapien ipsum blandit.</p>
+                    <p class="poppin-font fw-normal fs-sm lh-150 text-start color-white-2 mw-770">Arcu fringilla
+                        tincidunt mauris ut risus massa ipsum. Metus adipiscing sed leo pharetra sed. Ut nulla
+                        libero vel ipsum
+                        adipiscing purus posuere. Dui pulvinar id enim tristique habitasse lobortis. Aliquam et
+                        et orci ultrices interdum
+                        rhoncus arcu mi quis. Arcu fringilla tincidunt mauris ut risus massa ipsum. Metus
+                        adipiscing sed leo pharetra sed. Ut
+                        nulla libero vel ipsum adipiscing purus posuere. Dui pulvinar id enim tristique
+                        habitasse lobortis. Aliquam et et orci
+                        ultrices interdum rhoncus arcu mi quis.</p>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-12 col-lg-6 col-xl-4">
+                            <div class="d-flex">
+                                <div class="que-svg-1 d-flex align-items-center justify-content-center me-3">
+                                    <svg width="18" height="21" viewBox="0 0 18 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13 0.5L18 5.5V19.508C17.9997 19.7712 17.895 20.0235 17.7088 20.2095C17.5226 20.3955 17.2702 20.5 17.007 20.5H0.993C0.730378 20.4982 0.479017 20.3931 0.293218 20.2075C0.107418 20.0219 0.00209465 19.7706 0 19.508V1.492C0 0.944 0.445 0.5 0.993 0.5H13ZM10.2 10.5L13 6.5H10.6L9 8.786L7.4 6.5H5L7.8 10.5L5 14.5H7.4L9 12.214L10.6 14.5H13L10.2 10.5Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="fw-normal fs-sm lh-114 roboto-font text-white mb-1">Sales report
+                                    </p>
+                                    <p class="fw-normal fs-sm lh-150 poppin-font color-light-white-2">2022-2023
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-12 col-lg-6 col-xl-6">
+                            <div class="d-flex">
+                                <div class="que-svg-1 d-flex align-items-center justify-content-center me-3">
+                                    <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M16 0.5H2C0.9 0.5 0 1.4 0 2.5V16.5C0 17.6 0.9 18.5 2 18.5H16C17.1 18.5 18 17.6 18 16.5V2.5C18 1.4 17.1 0.5 16 0.5ZM6.5 9C6.5 9.8 5.8 10.5 5 10.5H4V12.5H2.5V6.5H5C5.8 6.5 6.5 7.2 6.5 8V9ZM11.5 11C11.5 11.8 10.8 12.5 10 12.5H7.5V6.5H10C10.8 6.5 11.5 7.2 11.5 8V11ZM15.5 8H14V9H15.5V10.5H14V12.5H12.5V6.5H15.5V8ZM9 8H10V11H9V8ZM4 8H5V9H4V8Z"
+                                            fill="white" style="fill:white;fill-opacity:1;" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="fw-normal fs-sm lh-114 roboto-font text-white mb-1">Orinoco
+                                        Ferrominera wag...</p>
+                                    <p class="fw-normal fs-sm lh-150 poppin-font color-light-white-2">2022-2023
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-4 mt-3 grid-item-7">
+                    <p class="text-white fw-medium fs-5 lh-114 roboto-font">Company Gallery</p>
+                    <div class="slider-box ">
+                        <div class="slide-card">
+                            <img src="./assets/image/png/slick-slider-1.png" alt="company-galery"
+                                class="w-100 img-slider-1">
+                        </div>
+                        <div class="slide-card">
+                            <img src="./assets/image/png/slick-slider-2.png" alt="company-galery" class="w-100">
+                        </div>
+                        <div class="slide-card">
+                            <img src="./assets/image/png/slick-slider-3.png" alt="company-galery" class="w-100">
+                        </div>
+                        <div class="slide-card">
+                            <img src="./assets/image/png/slick-slider-4.png" alt="company-galery" class="w-100">
+                        </div>
+
+                    </div>
+                    <div class="mini-slider ">
+                        <div class="slide-card">
+                            <img src="./assets/image/png/mini-slider-1.png" alt="company-galery">
+                        </div>
+                        <div class="slide-card">
+                            <img src="./assets/image/png/mini-slider-2.png" alt="company-galery">
+                        </div>
+                        <div class="slide-card">
+                            <img src="./assets/image/png/mini-slider-3.png" alt="company-galery">
+                        </div>
+                        <div class="slide-card">
+                            <img src="./assets/image/png/mini-slider-4.png" alt="company-galery">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="color-bg-blue py-3">
+            <div class="container d-flex justify-content-between align-items-center flex-column-reverse flex-sm-row ">
+                <p
+                    class=" text-center fw-normal lh-150 color-light-white-2 fs-sm poppin-font mt-3 mt-sm-0 mb-3 mb-sm-0 ">
+                    ©
+                    Copyright
+                    2021 Pantera
+                    | All rights reserved.</p>
+                <div class="d-flex gap-20">
+                    <div class="f-circle social-link">
+                        <a class="" href="https://www.facebook.com/" target="_blank"><svg width="11" height="20"
+                                viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7 11.5H9.5L10.5 7.5H7V5.5C7 4.47 7 3.5 9 3.5H10.5V0.14C10.174 0.0970001 8.943 0 7.643 0C4.928 0 3 1.657 3 4.7V7.5H0V11.5H3V20H7V11.5Z"
+                                    fill="#62C9CC"
+                                    style="fill:#62C9CC;fill:color(display-p3 0.3843 0.7882 0.8000);fill-opacity:1;" />
+                            </svg></a>
+                    </div>
+                    <div class="i-circle social-link">
+                        <a href="https://www.instagram.com/" target="_blank"><svg width="20" height="20"
+                                viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.0286 0.0012304C11.7583 -0.00156983 12.488 0.00576429 13.2176 0.0232305L13.4116 0.0302304C13.6356 0.0382304 13.8566 0.0482304 14.1236 0.0602304C15.1876 0.11023 15.9136 0.278231 16.5506 0.525231C17.2106 0.779231 17.7666 1.12323 18.3226 1.67923C18.831 2.17884 19.2244 2.78318 19.4756 3.45023C19.7226 4.08723 19.8906 4.81423 19.9406 5.87823C19.9526 6.14423 19.9626 6.36623 19.9706 6.59023L19.9766 6.78423C19.9943 7.51342 20.002 8.24283 19.9996 8.97223L20.0006 9.71823V11.0282C20.003 11.758 19.9954 12.4877 19.9776 13.2172L19.9716 13.4112C19.9636 13.6352 19.9536 13.8562 19.9416 14.1232C19.8916 15.1872 19.7216 15.9132 19.4756 16.5502C19.2252 17.218 18.8317 17.8228 18.3226 18.3222C17.8225 18.8306 17.2179 19.224 16.5506 19.4752C15.9136 19.7222 15.1876 19.8902 14.1236 19.9402C13.8566 19.9522 13.6356 19.9622 13.4116 19.9702L13.2176 19.9762C12.4881 19.994 11.7583 20.0017 11.0286 19.9992L10.2826 20.0002H8.97358C8.24384 20.0027 7.5141 19.995 6.78458 19.9772L6.59058 19.9712C6.35319 19.9626 6.11585 19.9526 5.87858 19.9412C4.81458 19.8912 4.08858 19.7212 3.45058 19.4752C2.78326 19.2246 2.17881 18.8311 1.67958 18.3222C1.17062 17.8225 0.776801 17.2178 0.525577 16.5502C0.278577 15.9132 0.110577 15.1872 0.0605769 14.1232C0.0494399 13.8859 0.0394398 13.6486 0.030577 13.4112L0.0255771 13.2172C0.00714068 12.4877 -0.00119355 11.758 0.000577001 11.0282V8.97223C-0.00221397 8.24283 0.00512015 7.51343 0.0225771 6.78423L0.029577 6.59023C0.037577 6.36623 0.047577 6.14423 0.059577 5.87823C0.109577 4.81323 0.277577 4.08823 0.524577 3.45023C0.77595 2.78285 1.17054 2.17868 1.68058 1.68023C2.17947 1.17098 2.78354 0.776803 3.45058 0.525231C4.08858 0.278231 4.81358 0.11023 5.87858 0.0602304L6.59058 0.0302304L6.78458 0.0252306C7.51376 0.00680338 8.24316 -0.00153085 8.97258 0.000230468L11.0286 0.0012304ZM10.0006 5.00123C9.33808 4.99186 8.68033 5.11425 8.06555 5.3613C7.45077 5.60834 6.89122 5.97511 6.41942 6.44029C5.94762 6.90546 5.57298 7.45977 5.31726 8.07099C5.06155 8.68222 4.92987 9.33817 4.92987 10.0007C4.92987 10.6633 5.06155 11.3192 5.31726 11.9305C5.57298 12.5417 5.94762 13.096 6.41942 13.5612C6.89122 14.0264 7.45077 14.3931 8.06555 14.6402C8.68033 14.8872 9.33808 15.0096 10.0006 15.0002C11.3267 15.0002 12.5984 14.4734 13.5361 13.5358C14.4738 12.5981 15.0006 11.3263 15.0006 10.0002C15.0006 8.67415 14.4738 7.40238 13.5361 6.4647C12.5984 5.52701 11.3267 5.00123 10.0006 5.00123ZM10.0006 7.00123C10.3991 6.99389 10.7951 7.06603 11.1654 7.21344C11.5357 7.36085 11.8729 7.58057 12.1574 7.85978C12.4418 8.13898 12.6678 8.47206 12.822 8.83957C12.9763 9.20708 13.0558 9.60165 13.0558 10.0002C13.0559 10.3988 12.9766 10.7934 12.8224 11.1609C12.6683 11.5285 12.4424 11.8617 12.1581 12.141C11.8737 12.4203 11.5366 12.6401 11.1663 12.7876C10.796 12.9352 10.4001 13.0074 10.0016 13.0002C9.20593 13.0002 8.44287 12.6842 7.88026 12.1216C7.31765 11.5589 7.00158 10.7959 7.00158 10.0002C7.00158 9.20458 7.31765 8.44152 7.88026 7.87891C8.44287 7.3163 9.20593 7.00023 10.0016 7.00023L10.0006 7.00123ZM15.2506 3.50123C14.928 3.51414 14.6229 3.65138 14.3992 3.8842C14.1755 4.11702 14.0506 4.42736 14.0506 4.75023C14.0506 5.0731 14.1755 5.38344 14.3992 5.61626C14.6229 5.84908 14.928 5.98632 15.2506 5.99923C15.5821 5.99923 15.9 5.86753 16.1345 5.63311C16.3689 5.39869 16.5006 5.08075 16.5006 4.74923C16.5006 4.41771 16.3689 4.09977 16.1345 3.86535C15.9 3.63093 15.5821 3.49923 15.2506 3.49923V3.50123Z"
+                                    fill="#62C9CC"
+                                    style="fill:#62C9CC;fill:color(display-p3 0.3843 0.7882 0.8000);fill-opacity:1;" />
+                            </svg></a>
+
+                    </div>
+                    <div class="i-circle social-link">
+                        <a href="https://x.com/?lang=en" target="_blank"><svg width="22" height="17" viewBox="0 0 22 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21.4591 2C20.6891 2.35 19.8591 2.58 18.9991 2.69C19.8791 2.16 20.5591 1.32 20.8791 0.31C20.0491 0.81 19.1291 1.16 18.1591 1.36C17.3691 0.5 16.2591 0 14.9991 0C12.6491 0 10.7291 1.92 10.7291 4.29C10.7291 4.63 10.7691 4.96 10.8391 5.27C7.27906 5.09 4.10906 3.38 1.99906 0.79C1.62906 1.42 1.41906 2.16 1.41906 2.94C1.41906 4.43 2.16906 5.75 3.32906 6.5C2.61906 6.5 1.95906 6.3 1.37906 6V6.03C1.37906 8.11 2.85906 9.85 4.81906 10.24C4.18979 10.4122 3.52916 10.4362 2.88906 10.31C3.16067 11.1625 3.6926 11.9084 4.41008 12.4429C5.12756 12.9775 5.99451 13.2737 6.88906 13.29C5.37269 14.4904 3.49306 15.1393 1.55906 15.13C1.21906 15.13 0.879063 15.11 0.539062 15.07C2.43906 16.29 4.69906 17 7.11906 17C14.9991 17 19.3291 10.46 19.3291 4.79C19.3291 4.6 19.3291 4.42 19.3191 4.23C20.1591 3.63 20.8791 2.87 21.4591 2Z"
+                                    fill="#62C9CC"
+                                    style="fill:#62C9CC;fill:color(display-p3 0.3843 0.7882 0.8000);fill-opacity:1;" />
+                            </svg></a>
+                    </div>
+                    <div class="i-circle social-link">
+                        <a href="https://in.linkedin.com/" target="_blank"><svg width="20" height="18"
+                                viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.94141 2.001C4.94114 2.53143 4.73017 3.04004 4.35491 3.41492C3.97965 3.78981 3.47084 4.00027 2.94041 4C2.40997 3.99974 1.90137 3.78877 1.52649 3.41351C1.1516 3.03825 0.941141 2.52943 0.941407 1.999C0.941672 1.46857 1.15264 0.959965 1.5279 0.585079C1.90316 0.210194 2.41197 -0.000264966 2.94241 2.50361e-07C3.47284 0.000265467 3.98144 0.211233 4.35633 0.586494C4.73121 0.961754 4.94167 1.47057 4.94141 2.001ZM5.00141 5.481H1.00141V18.001H5.00141V5.481ZM11.3214 5.481H7.34141V18.001H11.2814V11.431C11.2814 7.771 16.0514 7.431 16.0514 11.431V18.001H20.0014V10.071C20.0014 3.901 12.9414 4.131 11.2814 7.161L11.3214 5.481Z"
+                                    fill="#62C9CC"
+                                    style="fill:#62C9CC;fill:color(display-p3 0.3843 0.7882 0.8000);fill-opacity:1;" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        let menuIcon = document.querySelector("#menuicn");
+        let sideContent = document.querySelector("aside div");
+        menuIcon.addEventListener("click", () => {
+            sideContent.classList.toggle("show");
+        })
+    </script>
+    <script>
+        $('.slider-box').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.mini-slider'
+        });
+        $('.mini-slider').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            asNavFor: '.slider-box',
+            dots: true,
+            arrows: false,
+            centerMode: true,
+            focusOnSelect: true,
+
+        });
+
+    </script>
+</body>
+
+</html>
